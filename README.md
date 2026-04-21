@@ -120,4 +120,9 @@ rag-chatbot/
 └── docker-compose.yml   # Qdrant + Valkey services
 ```
 
+
+![alt text](image.png)
+
+![alt text](image-1.png)
+
 ## Abhilash Mohapatra
