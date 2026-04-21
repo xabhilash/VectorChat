@@ -1,0 +1,32 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch --env-file=.env index.js",
+    "dev:worker": "node --watch --env-file=.env worker.js",
+    "start": "node --env-file=.env index.js",
+    "start:worker": "node --env-file=.env worker.js"
+  },
+  "dependencies": {
+    "@langchain/community": "^1.1.27",
+    "@langchain/core": "^1.1.40",
+    "@langchain/openai": "^1.4.4",
+    "@langchain/qdrant": "^1.0.1",
+    "bullmq": "^5.75.2",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "langchain": "^1.3.3",
+    "multer": "^2.1.1",
+    "openai": "^6.34.0",
+    "pdf-parse": "^1.1.4"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.6.0"
+  }
+}
