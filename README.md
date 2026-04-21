@@ -10,6 +10,14 @@ Chat with your PDF documents. Upload a file, ask questions, and get answers grou
 - **Queue / Cache**: Redis (Valkey)
 - **LLM**: OpenAI (embeddings + chat completions)
 
+## How It Works
+
+- **Extract Text from PDFs**: Use LangChain's `PDFLoader` (built on `pdf-parse`) to extract text from uploaded PDFs, page level chunking.
+- **Queue Ingestion Jobs**: Offload PDF processing to a BullMQ background worker backed by Redis, so uploads stay responsive.
+- **Build a Vector Store**: Embed each page with OpenAI's `text-embedding-3-small` and store the chunks in Qdrant.
+- **Retrieve Relevant Context**: Embed the user's query with the same model and fetch the top-k most similar chunks from Qdrant.
+- **Generate Responses**: Inject the retrieved document into a system prompt and use OpenAI's `gpt-4.1` to generate a grounded answer, returned alongside source citations.
+
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/) 20.6 or newer
