@@ -1,4 +1,4 @@
-# VectorChat — RAG Chatbot for PDFs
+# VectorChat - RAG Chatbot for PDFs
 
 Chat with your PDF documents. Upload a file, ask questions, and get answers grounded in the document's content using Retrieval-Augmented Generation (RAG).
 
